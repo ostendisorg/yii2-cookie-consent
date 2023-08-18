@@ -21,6 +21,7 @@ use yii\web\View;
  * @property string $path
  * @property string $domain
  * @property string $expiryDays
+ * @property string $title
  * @property string $message
  * @property string $save
  * @property string $acceptAll
