@@ -1,4 +1,5 @@
 # yii2-cookie-consent
+
 solution to the EU Cookie Law
 
 ## Getting started
@@ -12,6 +13,7 @@ composer require dmstr/yii2-cookie-consent
 ## CookieConsentHelper Component
 
 yii config
+
 ```php
 'components' => [
     'cookieConsentHelper' => [
@@ -114,7 +116,7 @@ use dmstr\cookieconsent\widgets\CookieConsent;
                 {
                     "title": t("cookie-consent", "Goal"),
                     "description": t("cookie-consent", "_ga, _gat, _gid, _gali")
-                
+
                 }
             ]
         }
@@ -245,67 +247,74 @@ use dmstr\cookieconsent\widgets\CookieConsent;
 
 ```css
 .cookie-consent-popup {
-    animation-name: show;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999999;
+  animation-name: show;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999999;
 }
 
 .cookie-consent-popup.open {
-    display: block;
-    opacity: 1;
-    animation-name: show;
-    animation-duration: 1s;
-    animation-timing-function: ease;
+  display: block;
+  opacity: 1;
+  animation-name: show;
+  animation-duration: 1s;
+  animation-timing-function: ease;
 }
 
 .cookie-consent-controls {
-    max-height: 0;
-    overflow: hidden;
-    -webkit-transition: max-height 0.5s ease-out;
-    -moz-transition: max-height 0.5s ease-out;
-    transition: max-height 0.5s ease-out;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.5s ease-out;
+  -moz-transition: max-height 0.5s ease-out;
+  transition: max-height 0.5s ease-out;
 }
 
 .cookie-consent-controls.open {
-    margin: 0 0 30px 0;
-    max-height: 600px;
+  margin: 0 0 30px 0;
+  max-height: 600px;
 }
 
 .cookie-consent-details {
-    max-height: 0;
-    overflow: hidden;
-    -webkit-transition: max-height 0.5s ease-out;
-    -moz-transition: max-height 0.5s ease-out;
-    transition: max-height 0.5s ease-out;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.5s ease-out;
+  -moz-transition: max-height 0.5s ease-out;
+  transition: max-height 0.5s ease-out;
 }
 
 .cookie-consent-details.open {
-    max-height: 600px;
+  max-height: 600px;
 }
 
 @keyframes show {
-    from {opacity: 0;}
-    to {opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes hide {
-    from {opacity: 1;}
-    to {opacity: 0;}
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
-
 ```
 
 ## Settings config example [phemellc/yii2-settings](https://github.com/phemellc/yii2-settings)
 
-* section: cookie-consent
-* key: config
-* type: object
+- section: cookie-consent
+- key: config
+- type: object
 
 ```json
 {
@@ -319,9 +328,9 @@ use dmstr\cookieconsent\widgets\CookieConsent;
   "link": "#",
   "consent": {
     "necessary": {
-        "label": "Necessary",
-        "checked": true,
-        "disabled": true
+      "label": "Necessary",
+      "checked": true,
+      "disabled": true
     },
     "statistics": {
       "label": "Statistics",
