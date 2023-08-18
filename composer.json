@@ -1,6 +1,7 @@
 {
   "name": "dmstr/yii2-cookie-consent",
   "description": "Yii2 Cookie Consent Widget",
+  "version": "1.4.5",
   "type": "yii2-extension",
   "keywords": [
     "yii2",
