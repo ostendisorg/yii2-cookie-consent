@@ -66,6 +66,12 @@ class CookieConsent extends Widget
     public $expiryDays = 365;
 
     /**
+     * @var $title
+     * Cookie consent title
+     */
+    public $title = 'We appreciate your privacy';
+
+    /**
      * @var $message
      * Cookie consent text
      */
