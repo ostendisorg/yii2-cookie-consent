@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link http://www.diemeisterei.de
  * @copyright Copyright (c) 2019 diemeisterei GmbH, Stuttgart
@@ -148,7 +149,8 @@ class CookieConsent extends Widget
     {
         $encondedConsentData = json_encode($this->_consentData);
 
-        $this->view->registerJs(<<<JS
+        $this->view->registerJs(
+            <<<JS
 window.addEventListener('load', function () {
     window.cookieConsent = new CookieConsent({
       name: '{$this->name}',
@@ -161,8 +163,9 @@ window.addEventListener('load', function () {
       window.location.reload()
     }
 });
-JS
-            , View::POS_END );
+JS,
+            View::POS_END
+        );
     }
 
     public function init()
@@ -211,7 +214,6 @@ JS
             $this->_consentData[$key]['details'] = $details;
             $this->_consentData[$key]['checked'] = $checked;
             $this->_consentData[$key]['disabled'] = $disabled;
-
         }
     }
 
@@ -220,6 +222,7 @@ JS
         CookieConsentAsset::register($this->view);
         $this->registerAssets();
         return $this->render('cookie-consent-popup', [
+            'title' => $this->title,
             'message' => $this->message,
             'save' => $this->save,
             'acceptAll' => $this->acceptAll,
