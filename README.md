@@ -31,6 +31,7 @@ use dmstr\cookieconsent\widgets\CookieConsent;
     'path' => '/',
     'domain' => '',
     'expiryDays' => 365,
+    'title' => Yii::t('cookie-consent','We appreciate your privacy'),
     'message' => Yii::t('cookie-consent', 'We use cookies to ensure the proper functioning of our website. For an improved visit experience we use analysis products. These are used when you agree with "Statistics".'),
     'save' => Yii::t('cookie-consent', 'Save'),
     'acceptAll' => Yii::t('cookie-consent', 'Accept all'),
