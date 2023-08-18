@@ -30,14 +30,6 @@ use yii\helpers\Html; ?>
                     <span class="cookie-consent-text"><?= $message ?></span>
                     <?= Html::a($learnMore, $link, ['class' => 'cookie-consent-link']) ?>
                 </p>
-            </div>
-            <div class="modal-footer">
-
-                <button class="cookie-consent-accept-all"><?= $acceptAll ?></button>
-                <button class="cookie-consent-controls-toggle"><?= $controlsOpen ?></button>
-                <button class="cookie-consent-details-toggle"><?= $detailsOpen ?></button>
-
-
 
                 <div class="cookie-consent-controls <?= (!empty($visibleControls)) ? 'open' : '' ?>">
                     <?php foreach ($consent as $key => $item) : ?>
@@ -51,7 +43,7 @@ use yii\helpers\Html; ?>
                             <span><?= $item["label"] ?></span>
                         </label>
                     <?php endforeach ?>
-                    <button class="cookie-consent-save" data-cc-namespace="popup"><?= $save ?></button>
+
                 </div>
                 <div class="cookie-consent-details <?php if (!empty($visibleDetails)) : ?>open<?php endif; ?>">
                     <?php foreach ($consent as $key => $item) : ?>
@@ -70,6 +62,11 @@ use yii\helpers\Html; ?>
                         <?php endif; ?>
                     <?php endforeach ?>
                 </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary cookie-consent-accept-all"><?= $acceptAll ?></button>
+                <button class="btn btn-secondary cookie-consent-save" data-cc-namespace="popup"><?= $save ?></button>
+                <button class="btn btn-outline-secondary cookie-consent-details-toggle"><?= $detailsOpen ?></button>
             </div>
         </div>
     </div>
