@@ -16,6 +16,7 @@
   animation-name: show;
   animation-duration: 1s;
   animation-timing-function: ease;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .cookie-consent-controls {
