@@ -33,37 +33,41 @@ use yii\helpers\Html; ?>
                 </div>
                 <div class="container-fluid cookie-consent-controls <?= (!empty($visibleControls)) ? 'show' : '' ?>">
                     <?php foreach ($consent as $key => $item) : ?>
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline mb-3">
                             <?= Html::checkbox($key, $item["checked"], [
                                 'class' => 'form-check-input cookie-consent-checkbox',
                                 'data-cc-consent' => $key,
                                 'disabled' => $item["disabled"],
                                 'id' => $key
                             ]) ?>
-                            <label for="<?= $key ?>" class="cookie-consent-control"><?= $item["label"] ?></label>
+                            <label for="<?= $key ?>" class="cookie-consent-control mb-0"><?= $item["label"] ?></label>
                         </div>
                     <?php endforeach ?>
                 </div>
-                <div class="container-fluid cookie-consent-details <?= (!empty($visibleDetails)) ? 'show' : '' ?>">
-                    <?php foreach ($consent as $key => $item) : ?>
-                        <?php if (!empty($item['details'])) : ?>
-                            <h5><?= $item["label"] ?></h5>
-                            <table>
-                                <?php foreach ($item['details'] as $detail) : ?>
-                                    <?php if (!empty($detail['title']) && !empty($detail['description'])) : ?>
-                                        <tr>
-                                            <td><?= $detail['title'] ?></td>
-                                            <td><?= $detail['description'] ?></td>
-                                        </tr>
-                                    <?php endif ?>
-                                <?php endforeach ?>
-                            </table>
-                        <?php endif ?>
-                    <?php endforeach ?>
+                <div class="container-fluid">
+                    <button class="btn btn-outline-secondary btn-sm" data-toggle="collapse" data-target="#cookie-consent-details" aria-expanded="false" aria-controls="cookie-consent-details">
+                        <?= $detailsOpen ?>
+                    </button>
+                    <div id="cookie-consent-details" class="collapse">
+                        <?php foreach ($consent as $key => $item) : ?>
+                            <?php if (!empty($item['details'])) : ?>
+                                <p><?= $item["label"] ?></p>
+                                <dl class="row">
+                                    <?php foreach ($item['details'] as $detail) : ?>
+                                        <?php if (!empty($detail['title']) && !empty($detail['description'])) : ?>
+                                            <dt class="col-sm-3"><?= $detail['title'] ?>
+                                </dl>
+                                <dd class="col-sm-9"><?= $detail['description'] ?></dd>
+                            <?php endif ?>
+                        <?php endforeach ?>
+                        </dl>
+                    <?php endif ?>
+                <?php endforeach ?>
+                    </div>
                 </div>
-                <button class="btn btn-outline-secondary btn-sm cookie-consent-details-toggle"><?= $detailsOpen ?></button>
+
             </div>
-            <div class="modal-footer">
+            <div class=" modal-footer">
                 <button class="btn btn-secondary cookie-consent-accept-all"><?= $acceptAll ?></button>
                 <button class="btn btn-secondary cookie-consent-accept-necessary"><?= $acceptNecessary ?></button>
             </div>
