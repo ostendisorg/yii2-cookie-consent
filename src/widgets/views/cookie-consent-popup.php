@@ -10,7 +10,6 @@
  * --- VARIABLES ---
  *
  * @var $title string
- * @var $save string
  * @var $learnMore string
  * @var $link string
  * @var $consent array
@@ -20,9 +19,12 @@ use yii\helpers\Html; ?>
 
 <div class="modal fade cookie-consent-popup" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel"><?= $title ?></h5>
+        <div class="modal-content bg-black-transparent">
+            <div class="modal-header bg-black-transparent py-4">
+                <h5 class="modal-title" id="staticBackdropLabel">
+                    <i class="fas fa-cookie-bite mr-2 fa-lg fa-fw"></i>
+                    <?= $title ?>
+                </h5>
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
@@ -67,8 +69,8 @@ use yii\helpers\Html; ?>
 
             </div>
             <div class=" modal-footer">
-                <button class="btn btn-ostendis cookie-consent-accept-all"><?= $acceptAll ?></button>
-                <button class="btn btn-ostendis cookie-consent-accept-necessary"><?= $acceptNecessary ?></button>
+                <button class="btn btn-outline-ostendis cookie-consent-accept-all"><?= $acceptAll ?></button>
+                <button class="btn btn-outline-ostendis cookie-consent-accept-necessary"><?= $acceptNecessary ?></button>
             </div>
         </div>
     </div>
