@@ -298,5 +298,3 @@ CookieConsent.prototype.mergeObjects = function () {
 };
 
 CookieConsent.prototype.afterSave = function () {};
-
-//export default CookieConsent
