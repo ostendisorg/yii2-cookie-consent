@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link http://www.diemeisterei.de
  * @copyright Copyright (c) 2019 diemeisterei GmbH, Stuttgart
@@ -13,8 +14,9 @@ use yii\web\AssetBundle;
 
 class CookieConsentJSAsset extends AssetBundle
 {
-    public $sourcePath = '@npm/dmstr--cookie-consent/dist';
+    public $sourcePath = __DIR__;
+
     public $js = [
-        'cookie-consent.js',
+        'js/' . (YII_ENV_PROD ? 'cookie-consent.min.js' : 'cookie-consent.js'),
     ];
 }
