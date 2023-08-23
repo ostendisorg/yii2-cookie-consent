@@ -7,6 +7,7 @@
 }
 .cookie-consent-link {
   color: #f8f9fa;
+  text-decoration: underline;
 }
 .cookie-consent-link:active,
 .cookie-consent-link:focus,
