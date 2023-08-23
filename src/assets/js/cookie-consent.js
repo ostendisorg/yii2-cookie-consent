@@ -154,7 +154,7 @@ CookieConsent.prototype.addEventListeners = function () {
     });
   }
   if (this.acceptNecessaryButtons.length > 0) {
-    this.acceptNecessaryButtons.forEach((denyAll) => {
+    this.acceptNecessaryButtons.forEach((acceptNecessary) => {
       acceptNecessary.addEventListener("click", () => {
         if (this.inputs.length > 0) {
           this.inputs.forEach((input) => {
