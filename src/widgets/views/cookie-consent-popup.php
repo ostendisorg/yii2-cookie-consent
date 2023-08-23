@@ -18,7 +18,6 @@
 
 use yii\helpers\Html; ?>
 
-
 <div class="modal fade cookie-consent-popup" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
@@ -30,8 +29,7 @@ use yii\helpers\Html; ?>
                     <span class="cookie-consent-text"><?= $message ?></span>
                     <?= Html::a($learnMore, $link, ['class' => 'cookie-consent-link']) ?>
                 </p>
-
-                <div class="cookie-consent-controls <?= (!empty($visibleControls)) ? 'open' : '' ?>">
+                <div class="cookie-consent-controls <?= (!empty($visibleControls)) ? 'show' : '' ?>">
                     <?php foreach ($consent as $key => $item) : ?>
                         <label for="<?= $key ?>" class="cookie-consent-control">
                             <?= Html::checkbox($key, $item["checked"], [
@@ -43,9 +41,8 @@ use yii\helpers\Html; ?>
                             <span><?= $item["label"] ?></span>
                         </label>
                     <?php endforeach ?>
-
                 </div>
-                <div class="cookie-consent-details <?php if (!empty($visibleDetails)) : ?>open<?php endif; ?>">
+                <div class="cookie-consent-details <?= (!empty($visibleDetails)) ? 'show' : '' ?>">
                     <?php foreach ($consent as $key => $item) : ?>
                         <?php if (!empty($item['details'])) : ?>
                             <label><?= $item["label"] ?></label>
@@ -56,10 +53,10 @@ use yii\helpers\Html; ?>
                                             <td><?= $detail['title'] ?></td>
                                             <td><?= $detail['description'] ?></td>
                                         </tr>
-                                    <?php endif; ?>
+                                    <?php endif ?>
                                 <?php endforeach ?>
                             </table>
-                        <?php endif; ?>
+                        <?php endif ?>
                     <?php endforeach ?>
                 </div>
             </div>
