@@ -148,7 +148,7 @@ class CookieConsent extends Widget
     /**
      * @var $_consentData
      *
-     * consent data for cookie conset js
+     * consent data for cookie consent js
      */
     protected $_consentData = [];
 
