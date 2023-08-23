@@ -8,6 +8,12 @@
 .cookie-consent-link {
   color: #f8f9fa;
 }
+.cookie-consent-link:active,
+.cookie-consent-link:focus,
+.cookie-consent-link:hover {
+  color: #f8f9fa;
+}
+
 @keyframes show {
   from {
     opacity: 0;
