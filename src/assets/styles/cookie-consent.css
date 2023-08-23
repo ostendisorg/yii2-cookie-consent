@@ -15,7 +15,7 @@
   transition: max-height 0.5s ease-out;
 }
 
-.cookie-consent-controls.open {
+.cookie-consent-controls.show {
   max-height: 600px;
 }
 
@@ -27,7 +27,7 @@
   transition: max-height 0.5s ease-out;
 }
 
-.cookie-consent-details.open {
+.cookie-consent-details.show {
   max-height: 600px;
 }
 
