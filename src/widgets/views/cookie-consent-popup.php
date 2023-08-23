@@ -45,7 +45,7 @@ use yii\helpers\Html; ?>
                     <?php endforeach ?>
                 </div>
                 <div class="container-fluid">
-                    <button class="btn btn-outline-secondary btn-sm mb-3" data-toggle="collapse" data-target="#cookie-consent-details" aria-expanded="false" aria-controls="cookie-consent-details">
+                    <button class="btn btn-outline-ostendis btn-sm mb-3" data-toggle="collapse" data-target="#cookie-consent-details" aria-expanded="false" aria-controls="cookie-consent-details">
                         <?= $detailsOpen ?>
                     </button>
                     <div id="cookie-consent-details" class="collapse">
@@ -67,8 +67,8 @@ use yii\helpers\Html; ?>
 
             </div>
             <div class=" modal-footer">
-                <button class="btn btn-secondary cookie-consent-accept-all"><?= $acceptAll ?></button>
-                <button class="btn btn-secondary cookie-consent-accept-necessary"><?= $acceptNecessary ?></button>
+                <button class="btn btn-ostendis cookie-consent-accept-all"><?= $acceptAll ?></button>
+                <button class="btn btn-ostendis cookie-consent-accept-necessary"><?= $acceptNecessary ?></button>
             </div>
         </div>
     </div>

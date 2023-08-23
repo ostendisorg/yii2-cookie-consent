@@ -6,7 +6,9 @@
   animation-timing-function: ease;
   background-color: rgba(0, 0, 0, 0.6);
 }
-
+.cookie-consent-link {
+  color: #161819;
+}
 @keyframes show {
   from {
     opacity: 0;
