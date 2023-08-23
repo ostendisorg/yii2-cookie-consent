@@ -45,13 +45,13 @@ use yii\helpers\Html; ?>
                     <?php endforeach ?>
                 </div>
                 <div class="container-fluid">
-                    <button class="btn btn-outline-secondary btn-sm" data-toggle="collapse" data-target="#cookie-consent-details" aria-expanded="false" aria-controls="cookie-consent-details">
+                    <button class="btn btn-outline-secondary btn-sm mb-3" data-toggle="collapse" data-target="#cookie-consent-details" aria-expanded="false" aria-controls="cookie-consent-details">
                         <?= $detailsOpen ?>
                     </button>
                     <div id="cookie-consent-details" class="collapse">
                         <?php foreach ($consent as $key => $item) : ?>
                             <?php if (!empty($item['details'])) : ?>
-                                <p><?= $item["label"] ?></p>
+                                <p><b><?= $item["label"] ?></b></p>
                                 <dl class="row">
                                     <?php foreach ($item['details'] as $detail) : ?>
                                         <?php if (!empty($detail['title']) && !empty($detail['description'])) : ?>
