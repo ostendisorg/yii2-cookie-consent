@@ -55,14 +55,13 @@ use yii\helpers\Html; ?>
                                 <dl class="row">
                                     <?php foreach ($item['details'] as $detail) : ?>
                                         <?php if (!empty($detail['title']) && !empty($detail['description'])) : ?>
-                                            <dt class="col-sm-3"><?= $detail['title'] ?>
+                                            <dt class="col-sm-3"><?= $detail['title'] ?></dt>
+                                            <dd class="col-sm-9"><?= $detail['description'] ?></dd>
+                                        <?php endif ?>
+                                    <?php endforeach ?>
                                 </dl>
-                                <dd class="col-sm-9"><?= $detail['description'] ?></dd>
                             <?php endif ?>
                         <?php endforeach ?>
-                        </dl>
-                    <?php endif ?>
-                <?php endforeach ?>
                     </div>
                 </div>
 
