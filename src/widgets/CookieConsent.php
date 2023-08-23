@@ -25,6 +25,7 @@ use yii\web\View;
  * @property string $message
  * @property string $save
  * @property string $acceptAll
+ * @property string $denyAll
  * @property string $controlsOpen
  * @property string $detailsOpen
  * @property string $learnMore
@@ -89,6 +90,12 @@ class CookieConsent extends Widget
      * Label for accept all button
      */
     public $acceptAll = 'Accept all';
+
+    /**
+     * @var $denyAll
+     * Label for accept all button
+     */
+    public $denyAll = 'Deny all';
 
     /**
      * @var $controlsOpen
