@@ -65,7 +65,7 @@ use yii\helpers\Html; ?>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary cookie-consent-accept-all"><?= $acceptAll ?></button>
-                <button class="btn btn-secondary cookie-consent-deny-all"><?= $denyAllButtons ?></button>
+                <button class="btn btn-secondary cookie-consent-deny-all"><?= $denyAll ?></button>
                 <button class="btn btn-outline-secondary cookie-consent-details-toggle"><?= $detailsOpen ?></button>
             </div>
         </div>
