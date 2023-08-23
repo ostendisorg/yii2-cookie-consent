@@ -34,37 +34,37 @@ const CookieConsent = function (options) {
 
 CookieConsent.prototype.open = function () {
   if (this.popup) {
-    this.popup.classList.add("open");
+    this.popup.classList.add("show");
   }
 };
 
 CookieConsent.prototype.close = function () {
   if (this.popup) {
-    this.popup.classList.remove("open");
+    this.popup.classList.remove("show");
   }
 };
 
 CookieConsent.prototype.openControls = function () {
   if (this.controls) {
-    this.controls.classList.add("open");
+    this.controls.classList.add("show");
   }
 };
 
 CookieConsent.prototype.closeControls = function () {
   if (this.controls) {
-    this.controls.classList.remove("open");
+    this.controls.classList.remove("show");
   }
 };
 
 CookieConsent.prototype.openDetails = function () {
   if (this.details) {
-    this.details.classList.add("open");
+    this.details.classList.add("show");
   }
 };
 
 CookieConsent.prototype.closeDetails = function () {
   if (this.details) {
-    this.details.classList.remove("open");
+    this.details.classList.remove("show");
   }
 };
 
@@ -72,7 +72,7 @@ CookieConsent.prototype.addEventListeners = function () {
   if (this.toggleButtons.length > 0) {
     this.toggleButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        if (this.popup.classList.contains("open")) {
+        if (this.popup.classList.contains("show")) {
           this.close();
         } else {
           this.open();
@@ -98,7 +98,7 @@ CookieConsent.prototype.addEventListeners = function () {
   if (this.toggleDetailsButtons.length > 0) {
     this.toggleDetailsButtons.forEach((toggleDetailsButton) => {
       toggleDetailsButton.addEventListener("click", () => {
-        if (this.details.classList.contains("open")) {
+        if (this.details.classList.contains("show")) {
           this.closeDetails();
         } else {
           this.open();
@@ -125,7 +125,7 @@ CookieConsent.prototype.addEventListeners = function () {
   if (this.toggleControlsButtons.length > 0) {
     this.toggleControlsButtons.forEach((toggleControlsButton) => {
       toggleControlsButton.addEventListener("click", () => {
-        if (this.controls.classList.contains("open")) {
+        if (this.controls.classList.contains("show")) {
           this.closeControls();
         } else {
           this.open();

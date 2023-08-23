@@ -1,16 +1,4 @@
-/* .cookie-consent-popup {
-    animation-name: show;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999999;
-} */
-
-.cookie-consent-popup.open {
+.cookie-consent-popup.show {
   display: block;
   opacity: 1;
   animation-name: show;
@@ -27,7 +15,7 @@
   transition: max-height 0.5s ease-out;
 }
 
-.cookie-consent-controls.open {
+.cookie-consent-controls.show {
   max-height: 600px;
 }
 
@@ -39,7 +27,7 @@
   transition: max-height 0.5s ease-out;
 }
 
-.cookie-consent-details.open {
+.cookie-consent-details.show {
   max-height: 600px;
 }
 
