@@ -159,7 +159,7 @@ CookieConsent.prototype.addEventListeners = function () {
         if (this.inputs.length > 0) {
           this.inputs.forEach((input) => {
             if (input.id == "necessary") {
-              input.checked = false;
+              input.checked = true;
             } else {
               input.checked = false;
             }
