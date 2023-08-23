@@ -47,21 +47,17 @@ use yii\helpers\Html; ?>
                 <div class="container-fluid cookie-consent-details <?= (!empty($visibleDetails)) ? 'show' : '' ?>">
                     <?php foreach ($consent as $key => $item) : ?>
                         <?php if (!empty($item['details'])) : ?>
-                            <div class="row">
-                                <div class="col-12">
-                                    <label><?= $item["label"] ?></label>
-                                </div>
-                                <table>
-                                    <?php foreach ($item['details'] as $detail) : ?>
-                                        <?php if (!empty($detail['title']) && !empty($detail['description'])) : ?>
-                                            <tr>
-                                                <td><?= $detail['title'] ?></td>
-                                                <td><?= $detail['description'] ?></td>
-                                            </tr>
-                                        <?php endif ?>
-                                    <?php endforeach ?>
-                                </table>
-                            </div>
+                            <h5><?= $item["label"] ?></h5>
+                            <table>
+                                <?php foreach ($item['details'] as $detail) : ?>
+                                    <?php if (!empty($detail['title']) && !empty($detail['description'])) : ?>
+                                        <tr>
+                                            <td><?= $detail['title'] ?></td>
+                                            <td><?= $detail['description'] ?></td>
+                                        </tr>
+                                    <?php endif ?>
+                                <?php endforeach ?>
+                            </table>
                         <?php endif ?>
                     <?php endforeach ?>
                 </div>
