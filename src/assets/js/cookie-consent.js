@@ -13,6 +13,7 @@ const CookieConsent = function (options) {
   this.details = document.querySelector(".cookie-consent-details");
   this.saveButtons = [].slice.call(document.querySelectorAll(".cookie-consent-save"));
   this.acceptAllButtons = [].slice.call(document.querySelectorAll(".cookie-consent-accept-all"));
+  this.acceptNecessaryButtons = [].slice.call(document.querySelectorAll(".cookie-consent-accept-necessary"));
   this.denyAllButtons = [].slice.call(document.querySelectorAll(".cookie-consent-deny-all"));
   this.openControlsButtons = [].slice.call(document.querySelectorAll(".cookie-consent-controls-open"));
   this.closeControlsButtons = [].slice.call(document.querySelectorAll(".cookie-consent-controls-close"));
@@ -146,6 +147,22 @@ CookieConsent.prototype.addEventListeners = function () {
         if (this.inputs.length > 0) {
           this.inputs.forEach((input) => {
             input.checked = true;
+          });
+        }
+        this.save();
+      });
+    });
+  }
+  if (this.acceptNecessaryButtons.length > 0) {
+    this.acceptNecessaryButtons.forEach((denyAll) => {
+      acceptNecessary.addEventListener("click", () => {
+        if (this.inputs.length > 0) {
+          this.inputs.forEach((input) => {
+            if (input.id == "necessary") {
+              input.checked = false;
+            } else {
+              input.checked = false;
+            }
           });
         }
         this.save();
