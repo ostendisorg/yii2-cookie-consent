@@ -19,51 +19,57 @@
 use yii\helpers\Html; ?>
 
 <div class="modal fade cookie-consent-popup" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel"><?= $title ?></h5>
             </div>
             <div class="modal-body">
-                <p class="cookie-consent-message">
-                    <span class="cookie-consent-text"><?= $message ?></span>
-                    <?= Html::a($learnMore, $link, ['class' => 'cookie-consent-link']) ?>
-                </p>
-                <div class="cookie-consent-controls <?= (!empty($visibleControls)) ? 'show' : '' ?>">
+                <div class="container-fluid">
+                    <p class="cookie-consent-message">
+                        <span class="cookie-consent-text"><?= $message ?></span>
+                        <?= Html::a($learnMore, $link, ['class' => 'cookie-consent-link']) ?>
+                    </p>
+                </div>
+                <div class="container-fluid cookie-consent-controls <?= (!empty($visibleControls)) ? 'show' : '' ?>">
                     <?php foreach ($consent as $key => $item) : ?>
-                        <label for="<?= $key ?>" class="cookie-consent-control">
+                        <div class="form-check form-check-inline">
                             <?= Html::checkbox($key, $item["checked"], [
-                                'class' => 'cookie-consent-checkbox',
+                                'class' => 'form-check-input cookie-consent-checkbox',
                                 'data-cc-consent' => $key,
                                 'disabled' => $item["disabled"],
                                 'id' => $key
                             ]) ?>
-                            <span><?= $item["label"] ?></span>
-                        </label>
+                            <label for="<?= $key ?>" class="cookie-consent-control"><?= $item["label"] ?></label>
+                        </div>
                     <?php endforeach ?>
                 </div>
-                <div class="cookie-consent-details <?= (!empty($visibleDetails)) ? 'show' : '' ?>">
+                <div class="container-fluid cookie-consent-details <?= (!empty($visibleDetails)) ? 'show' : '' ?>">
                     <?php foreach ($consent as $key => $item) : ?>
                         <?php if (!empty($item['details'])) : ?>
-                            <label><?= $item["label"] ?></label>
-                            <table>
-                                <?php foreach ($item['details'] as $detail) : ?>
-                                    <?php if (!empty($detail['title']) && !empty($detail['description'])) : ?>
-                                        <tr>
-                                            <td><?= $detail['title'] ?></td>
-                                            <td><?= $detail['description'] ?></td>
-                                        </tr>
-                                    <?php endif ?>
-                                <?php endforeach ?>
-                            </table>
+                            <div class="row">
+                                <div class="col-12">
+                                    <label><?= $item["label"] ?></label>
+                                </div>
+                                <table>
+                                    <?php foreach ($item['details'] as $detail) : ?>
+                                        <?php if (!empty($detail['title']) && !empty($detail['description'])) : ?>
+                                            <tr>
+                                                <td><?= $detail['title'] ?></td>
+                                                <td><?= $detail['description'] ?></td>
+                                            </tr>
+                                        <?php endif ?>
+                                    <?php endforeach ?>
+                                </table>
+                            </div>
                         <?php endif ?>
                     <?php endforeach ?>
                 </div>
+                <button class="btn btn-outline-secondary btn-sm cookie-consent-details-toggle"><?= $detailsOpen ?></button>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary cookie-consent-accept-all"><?= $acceptAll ?></button>
                 <button class="btn btn-secondary cookie-consent-accept-necessary"><?= $acceptNecessary ?></button>
-                <button class="btn btn-outline-secondary cookie-consent-details-toggle"><?= $detailsOpen ?></button>
             </div>
         </div>
     </div>
