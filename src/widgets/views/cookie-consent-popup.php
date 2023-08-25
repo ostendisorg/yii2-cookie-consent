@@ -17,10 +17,10 @@
 
 use yii\helpers\Html; ?>
 
-<div class="modal fade cookie-consent-popup bg-light-transparent" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content bg-dark text-light rounded-0">
-            <div class="modal-header bg-black text-light py-4">
+<div class="modal fade cookie-consent-popup" tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content bg-light rounded-0">
+            <div class="modal-header py-4">
                 <h5 class="modal-title" id="staticBackdropLabel">
                     <i class="fas fa-cookie-bite mr-2 fa-lg fa-fw"></i>
                     <?= $title ?>
@@ -66,11 +66,10 @@ use yii\helpers\Html; ?>
                         <?php endforeach ?>
                     </div>
                 </div>
-
             </div>
             <div class=" modal-footer">
+                <button class="btn btn-outline-secondary cookie-consent-accept-necessary"><?= $acceptNecessary ?></button>
                 <button class="btn btn-ostendis cookie-consent-accept-all"><?= $acceptAll ?></button>
-                <button class="btn btn-ostendis cookie-consent-accept-necessary"><?= $acceptNecessary ?></button>
             </div>
         </div>
     </div>
