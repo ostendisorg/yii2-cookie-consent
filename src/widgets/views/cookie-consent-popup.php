@@ -19,8 +19,8 @@ use yii\helpers\Html; ?>
 
 <div class="cookie-consent-popup" data-backdrop="false" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content bg-light rounded-0">
-            <div class="modal-header py-4">
+        <div class="modal-content bg-light border-0 rounded-0">
+            <div class="modal-header  border-0">
                 <h5 class="modal-title" id="staticBackdropLabel">
                     <i class="fas fa-cookie-bite mr-2 fa-lg fa-fw"></i>
                     <?= $title ?>
@@ -47,9 +47,6 @@ use yii\helpers\Html; ?>
                     <?php endforeach ?>
                 </div>
                 <div class="container-fluid">
-                    <button class="btn btn-outline-ostendis btn-sm mb-3" data-toggle="collapse" data-target="#cookie-consent-details" aria-expanded="false" aria-controls="cookie-consent-details">
-                        <?= $detailsOpen ?>
-                    </button>
                     <div id="cookie-consent-details" class="collapse">
                         <?php foreach ($consent as $key => $item) : ?>
                             <?php if (!empty($item['details'])) : ?>
@@ -67,9 +64,12 @@ use yii\helpers\Html; ?>
                     </div>
                 </div>
             </div>
-            <div class=" modal-footer">
-                <button class="btn btn-outline-secondary cookie-consent-accept-necessary"><?= $acceptNecessary ?></button>
-                <button class="btn btn-ostendis cookie-consent-accept-all"><?= $acceptAll ?></button>
+            <div class=" modal-footer border-0">
+                <button class="btn btn-outline-secondary btn-sm" data-toggle="collapse" data-target="#cookie-consent-details" aria-expanded="false" aria-controls="cookie-consent-details">
+                    <?= $detailsOpen ?>
+                </button>
+                <button class="btn btn-outline-secondary rounded-0 btn-sm cookie-consent-accept-necessary"><?= $acceptNecessary ?></button>
+                <button class="btn btn-ostendis btn-sm cookie-consent-accept-all"><?= $acceptAll ?></button>
             </div>
         </div>
     </div>

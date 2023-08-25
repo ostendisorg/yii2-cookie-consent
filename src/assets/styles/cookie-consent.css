@@ -25,16 +25,16 @@
   bottom: 40px;
   left: 40px;
   right: auto;
-  max-width: 400px;
+  box-shadow: 0 0 10px -1px rgba(0, 0, 0, 0.2);
 }
 .cookie-consent-link {
-  color: #f8f9fa;
+  color: #161819;
   text-decoration: underline;
 }
 .cookie-consent-link:active,
 .cookie-consent-link:focus,
 .cookie-consent-link:hover {
-  color: #f8f9fa;
+  color: #161819;
 }
 
 @keyframes show {
