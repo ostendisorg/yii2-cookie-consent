@@ -26,14 +26,14 @@ use yii\helpers\Html; ?>
                     <?= $title ?>
                 </h5>
             </div>
-            <div class="modal-body">
-                <div class="container-fluid py-0">
+            <div class="modal-body py-2">
+                <div class="container-fluid px-0">
                     <p class="cookie-consent-message">
                         <span class="cookie-consent-text"><?= $message ?></span>
                         <?= Html::a($learnMore, $link, ['class' => 'cookie-consent-link']) ?>
                     </p>
                 </div>
-                <div class="container-fluid py-0 cookie-consent-controls d-none <?= (!empty($visibleControls)) ? 'show' : '' ?>">
+                <div class="container-fluid px-0 cookie-consent-controls d-none <?= (!empty($visibleControls)) ? 'show' : '' ?>">
                     <?php foreach ($consent as $key => $item) : ?>
                         <div class="form-check form-check-inline mb-3">
                             <?= Html::checkbox($key, $item["checked"], [
@@ -46,7 +46,7 @@ use yii\helpers\Html; ?>
                         </div>
                     <?php endforeach ?>
                 </div>
-                <div class="container-fluid py-0">
+                <div class="container-fluid px-0">
                     <div id="cookie-consent-details" class="collapse">
                         <?php foreach ($consent as $key => $item) : ?>
                             <?php if (!empty($item['details'])) : ?>
