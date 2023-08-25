@@ -5,6 +5,15 @@
   animation-duration: 1s;
   animation-timing-function: ease;
 }
+.cookie-consent-popup .modal-dialog {
+  position: fixed;
+  margin: 0;
+  top: auto;
+  bottom: 40px;
+  left: 40px;
+  right: auto;
+  max-width: 400px;
+}
 .cookie-consent-link {
   color: #f8f9fa;
   text-decoration: underline;

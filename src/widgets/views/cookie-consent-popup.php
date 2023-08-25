@@ -17,7 +17,7 @@
 
 use yii\helpers\Html; ?>
 
-<div class="modal fade cookie-consent-popup" tabindex="-1">
+<div class="modal fade cookie-consent-popup" data-backdrop="false" tabindex="-1">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content bg-light rounded-0">
             <div class="modal-header py-4">
