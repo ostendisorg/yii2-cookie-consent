@@ -20,13 +20,17 @@
 
 .cookie-consent-popup .modal-dialog {
   position: fixed;
-  margin: 0;
+  margin: 2vw;
   top: auto;
-  bottom: 40px;
-  left: 40px;
+  bottom: 0;
+  left: 02;
   right: auto;
   box-shadow: 0 0 10px -1px rgba(0, 0, 0, 0.2);
 }
+.cookie-consent-popup .modal-body {
+  font-size: 0.8rem;
+}
+
 .cookie-consent-link {
   color: #161819;
   text-decoration: underline;
