@@ -149,6 +149,7 @@ CookieConsent.prototype.addEventListeners = function () {
             input.checked = true;
           });
         }
+        // Google tag manager widget (yii2-googletagmanager)
         consentGranted();
         this.save();
       });
