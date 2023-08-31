@@ -149,6 +149,7 @@ CookieConsent.prototype.addEventListeners = function () {
             input.checked = true;
           });
         }
+        consentGranted();
         this.save();
       });
     });
