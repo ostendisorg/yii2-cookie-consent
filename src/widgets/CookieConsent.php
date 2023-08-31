@@ -174,7 +174,7 @@ window.addEventListener('load', function () {
     });
     window.cookieConsent.afterSave = function (cc) {
       cc.clean({$encondedConsentData})
-      window.location.reload()
+      //window.location.reload()
     }
 });
 JS,
