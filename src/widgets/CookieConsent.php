@@ -165,19 +165,36 @@ class CookieConsent extends Widget
 
         $this->view->registerJs(
             <<<JS
-window.addEventListener('load', function () {
-    window.cookieConsent = new CookieConsent({
-      name: '{$this->name}',
-      path: '{$this->path}',
-      domain: '{$this->domain}',
-      expiryDays: {$this->expiryDays},
-    });
-    window.cookieConsent.afterSave = function (cc) {
-      cc.clean({$encondedConsentData})
-      //window.location.reload()
-    }
-});
-JS,
+            window.addEventListener('load', function () {
+                window.cookieConsent = new CookieConsent({
+                name: '{$this->name}',
+                path: '{$this->path}',
+                domain: '{$this->domain}',
+                expiryDays: {$this->expiryDays},
+                });
+                window.cookieConsent.afterSave = function (cc) {
+                cc.clean({$encondedConsentData})
+                }
+            });
+            JS,
+            View::POS_END
+        );
+        $this->view->registerJs(
+            <<<JS
+            let trackCookieConsent = function (acceptAll = 0) {
+
+                $.ajaxSetup({async: true});
+                $.ajax({
+                    url: '<?= Yii::$app->params['api']['baseUrl'] . '/track-cookie-consent';?>',
+                    type: 'post',
+                    data: {
+                        'acceptAll': acceptAll,
+              
+                    },
+                    dataType: 'json'
+                });
+              };
+              JS,
             View::POS_END
         );
     }
