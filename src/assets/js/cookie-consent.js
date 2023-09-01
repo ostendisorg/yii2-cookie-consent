@@ -211,6 +211,7 @@ CookieConsent.prototype.save = function () {
       }
     });
   }
+  this.close();
   this.refreshUI();
   this.afterSave(this);
 };
