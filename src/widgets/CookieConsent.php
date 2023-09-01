@@ -180,12 +180,12 @@ class CookieConsent extends Widget
             View::POS_END
         );
         $this->view->registerJs(
-            <<<JS
+            "
                     let trackCookieConsent = function (acceptAll = 0) {
 
                         $.ajaxSetup({async: true});
                         $.ajax({
-                            url: '<?= Yii::$app->params['api']['baseUrl'] . '/track-cookie-consent';?>',
+                            url: '" . Yii::$app->params['api']['baseUrl'] . " '/track-cookie-consent',
                             type: 'post',
                             data: {
                                 'acceptAll': acceptAll,
@@ -194,7 +194,7 @@ class CookieConsent extends Widget
                             dataType: 'json'
                         });
                         };
-              JS,
+              ",
             View::POS_END
         );
     }
