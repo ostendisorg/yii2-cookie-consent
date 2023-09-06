@@ -10,9 +10,11 @@
 
 namespace dmstr\cookieconsent\widgets;
 
+use Yii;
 use dmstr\cookieconsent\assets\CookieConsentAsset;
 use yii\base\Widget;
 use yii\web\View;
+
 
 /**
  * --- PUBLIC PROPERTIES ---
