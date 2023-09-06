@@ -184,14 +184,14 @@ class CookieConsent extends Widget
         $url = Yii::$app->params['api']['baseUrl'] . '/track-cookie-consent';
         $this->view->registerJs(
             "
-                let trackCookieConsent = function (acceptAll = 0) {
+                let trackCookieConsent = function (cookieConsentValue = 0) {
 
                     $.ajaxSetup({async: true});
                     $.ajax({
                             url: '" . $url . "' ,
                             type: 'post',
                             data: {
-                                'acceptAll': acceptAll,
+                                'CookieConsentValue': cookieConsentValue,
                         
                             },
                             dataType: 'json'
