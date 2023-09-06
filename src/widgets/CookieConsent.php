@@ -191,7 +191,7 @@ class CookieConsent extends Widget
                             url: '" . $url . "' ,
                             type: 'post',
                             data: {
-                                'CookieConsentValue': cookieConsentValue,
+                                'cookieConsentValue': cookieConsentValue,
                         
                             },
                             dataType: 'json'
