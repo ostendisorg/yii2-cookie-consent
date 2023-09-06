@@ -151,6 +151,8 @@ CookieConsent.prototype.addEventListeners = function () {
         }
         // Google tag manager widget (yii2-googletagmanager)
         consentGranted();
+        // Track cookie consent decision
+        trackCookieConsent(1);
         this.save();
       });
     });
@@ -167,6 +169,8 @@ CookieConsent.prototype.addEventListeners = function () {
             }
           });
         }
+        // Track cookie consent decision
+        trackCookieConsent(0);
         this.save();
       });
     });
@@ -179,6 +183,8 @@ CookieConsent.prototype.addEventListeners = function () {
             input.checked = false;
           });
         }
+        // Track cookie consent decision
+        trackCookieConsent(0);
         this.save();
       });
     });

@@ -181,23 +181,23 @@ class CookieConsent extends Widget
             JS,
             View::POS_END
         );
+        /** Cookie consent tracking 
+         * 0 = only necessary
+         * 1 = all accepted
+         */
         $url = Yii::$app->params['api']['baseUrl'] . '/track-cookie-consent';
         $this->view->registerJs(
-            "
-                let trackCookieConsent = function (cookieConsentValue = 0) {
-
-                    $.ajaxSetup({async: true});
-                    $.ajax({
-                            url: '" . $url . "' ,
-                            type: 'post',
-                            data: {
-                                'cookieConsentValue': cookieConsentValue,
-                        
-                            },
-                            dataType: 'json'
-                        });
-                        };
-              ",
+            "let trackCookieConsent = function (cookieConsentValue = 0) {
+                $.ajaxSetup({async: true});
+                $.ajax({
+                    url: '" . $url . "' ,
+                    type: 'post',
+                    data: {
+                        'cookieConsentValue': cookieConsentValue,
+                    },
+                    dataType: 'json'
+                });
+            };",
             View::POS_END
         );
     }
