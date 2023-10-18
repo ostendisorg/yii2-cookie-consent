@@ -7,7 +7,7 @@ solution to the EU Cookie Law
 ### Installation
 
 ```
-composer require dmstr/yii2-cookie-consent
+composer require ostendisorg/yii2-cookie-consent
 ```
 
 ## CookieConsentHelper Component
@@ -17,7 +17,7 @@ yii config
 ```php
 'components' => [
     'cookieConsentHelper' => [
-        'class' => dmstr\cookieconsent\components\CookieConsentHelper::class
+        'class' => ostendisorg\cookieconsent\components\CookieConsentHelper::class
     ]
 ]
 ```
@@ -25,7 +25,7 @@ yii config
 ### Usage with PHP
 
 ```php
-use dmstr\cookieconsent\widgets\CookieConsent;
+use ostendisorg\cookieconsent\widgets\CookieConsent;
 <?= CookieConsent::widget([
     'name' => 'cookie_consent_status',
     'path' => '/',
@@ -80,7 +80,7 @@ use dmstr\cookieconsent\widgets\CookieConsent;
 ### Usage with TWIG
 
 ```php
-{{ use('dmstr/cookieconsent/widgets/CookieConsent') }}
+{{ use('ostendisorg/cookieconsent/widgets/CookieConsent') }}
 {{ CookieConsent_widget({
     "name": "cookie_consent_status",
     "path": "/",

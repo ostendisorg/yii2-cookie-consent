@@ -1,5 +1,5 @@
 {
-  "name": "dmstr/yii2-cookie-consent",
+  "name": "ostendisorg/yii2-cookie-consent",
   "description": "Yii2 Cookie Consent Widget",
   "version": "1.5.3",
   "type": "yii2-extension",
@@ -24,7 +24,7 @@
   },
   "autoload": {
     "psr-4": {
-      "dmstr\\cookieconsent\\": "./src"
+      "ostendisorg\\cookieconsent\\": "./src"
     }
   },
   "config": {
@@ -33,6 +33,9 @@
         "npm-asset-library": "vendor/npm",
         "bower-asset-library": "vendor/bower"
       }
+    },
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
     }
   },
   "repositories": [

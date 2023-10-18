@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-namespace dmstr\cookieconsent\components;
+namespace ostendisorg\cookieconsent\components;
 
 use yii\base\Component;
 

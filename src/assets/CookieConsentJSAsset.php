@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace dmstr\cookieconsent\assets;
+namespace ostendisorg\cookieconsent\assets;
 
 use yii\web\AssetBundle;
 

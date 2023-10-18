@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-namespace dmstr\cookieconsent\assets;
+namespace ostendisorg\cookieconsent\assets;
 
 use yii\web\AssetBundle;
 
@@ -21,7 +21,7 @@ class CookieConsentAsset extends AssetBundle
     ];
 
     public $depends = [
-        'dmstr\cookieconsent\assets\CookieConsentJSAsset'
+        'ostendisorg\cookieconsent\assets\CookieConsentJSAsset'
     ];
 
 }

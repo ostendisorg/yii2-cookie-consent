@@ -8,10 +8,10 @@
  * file that was distributed with this source code.
  */
 
-namespace dmstr\cookieconsent\widgets;
+namespace ostendisorg\cookieconsent\widgets;
 
 use Yii;
-use dmstr\cookieconsent\assets\CookieConsentAsset;
+use ostendisorg\cookieconsent\assets\CookieConsentAsset;
 use yii\base\Widget;
 use yii\web\View;
 
