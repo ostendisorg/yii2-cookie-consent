@@ -149,8 +149,6 @@ CookieConsent.prototype.addEventListeners = function () {
             input.checked = true;
           });
         }
-        // Google tag manager widget (yii2-googletagmanager)
-        consentGranted();
         // Track cookie consent decision
         trackCookieConsent(1);
         this.save();
