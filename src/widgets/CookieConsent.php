@@ -238,13 +238,13 @@ class CookieConsent extends Widget
             <<<JS
                     window.addEventListener('load', function () {
                         window.cookieConsent = new CookieConsent({
-                        name: '{$this->name}',
-                        path: '{$this->path}',
-                        domain: '{$this->domain}'
-                        expiryDays: {$this->expiryDays},
+                            name: '{$this->name}',
+                            path: '{$this->path}',
+                            domain: '{$this->domain}',
+                            expiryDays: {$this->expiryDays},
                         })
                         window.cookieConsent.afterSave = function (cc) {
-                        cc.clean({$encondedConsentData})
+                            cc.clean({$encondedConsentData})
                         }
                     });
             JS,
