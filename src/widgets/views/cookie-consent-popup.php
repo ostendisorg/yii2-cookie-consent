@@ -65,7 +65,9 @@ use yii\helpers\Html; ?>
                 </div>
             </div>
             <div class=" modal-footer border-0">
-                <button class="btn btn-outline-secondary rounded-0 btn-sm" data-toggle="collapse" data-target="#cookie-consent-details" aria-expanded="false" aria-controls="cookie-consent-details">
+                <button class="btn btn-outline-secondary rounded-0 btn-sm" data-toggle="collapse"
+                        data-target="#cookie-consent-details" aria-expanded="false"
+                        aria-controls="cookie-consent-details">
                     <?= $detailsOpen ?>
                 </button>
                 <button class="btn btn-outline-secondary rounded-0 btn-sm cookie-consent-accept-necessary"><?= $acceptNecessary ?></button>

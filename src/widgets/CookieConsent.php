@@ -10,8 +10,8 @@
 
 namespace ostendisorg\cookieconsent\widgets;
 
-use Yii;
 use ostendisorg\cookieconsent\assets\CookieConsentAsset;
+use Yii;
 use yii\base\Widget;
 use yii\web\View;
 
@@ -161,47 +161,6 @@ class CookieConsent extends Widget
      */
     protected $_consentData = [];
 
-    protected function registerAssets()
-    {
-        $encondedConsentData = json_encode($this->_consentData);
-
-        $this->view->registerJs(
-            <<<JS
-                    window.addEventListener('load', function () {
-                        window.cookieConsent = new CookieConsent({
-                        name: '{$this->name}',
-                        path: '{$this->path}',
-                        domain: '{$this->domain}',
-                        expiryDays: {$this->expiryDays},
-                        });
-                        window.cookieConsent.afterSave = function (cc) {
-                        cc.clean({$encondedConsentData})
-                        }
-                    });
-            JS,
-            View::POS_END
-        );
-        /** Cookie consent tracking 
-         * 0 = only necessary
-         * 1 = all accepted
-         */
-        $url = Yii::$app->params['api']['baseUrl'] . '/track-cookie-consent';
-        $this->view->registerJs(
-            "let trackCookieConsent = function (cookieConsentValue = 0) {
-                $.ajaxSetup({async: true});
-                $.ajax({
-                    url: '" . $url . "' ,
-                    type: 'post',
-                    data: {
-                        'cookieConsentValue': cookieConsentValue,
-                    },
-                    dataType: 'json'
-                });
-            };",
-            View::POS_END
-        );
-    }
-
     public function init()
     {
         parent::init();
@@ -269,5 +228,46 @@ class CookieConsent extends Widget
             'link' => $this->link,
             'consent' => $this->_consentData
         ]);
+    }
+
+    protected function registerAssets()
+    {
+        $encondedConsentData = json_encode($this->_consentData);
+
+        $this->view->registerJs(
+            <<<JS
+                    window.addEventListener('load', function () {
+                        window.cookieConsent = new CookieConsent({
+                        name: '{$this->name}',
+                        path: '{$this->path}',
+                        domain: '{$this->domain}'
+                        expiryDays: {$this->expiryDays},
+                        })
+                        window.cookieConsent.afterSave = function (cc) {
+                        cc.clean({$encondedConsentData})
+                        }
+                    });
+            JS,
+            View::POS_END
+        );
+        /** Cookie consent tracking
+         * 0 = only necessary
+         * 1 = all accepted
+         */
+        $url = Yii::$app->params['api']['baseUrl'] . '/track-cookie-consent';
+        $this->view->registerJs(
+            "let trackCookieConsent = function (cookieConsentValue = 0) {
+                $.ajaxSetup({async: true});
+                $.ajax({
+                    url: '" . $url . "' ,
+                    type: 'post',
+                    data: {
+                        'cookieConsentValue': cookieConsentValue,
+                    },
+                    dataType: 'json'
+                });
+            };",
+            View::POS_END
+        );
     }
 }

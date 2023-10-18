@@ -25,6 +25,18 @@ class CookieConsentHelper extends Component
     public $cookieName = 'cookie_consent_status';
 
     /**
+     * Returns true if the consent is present in the consent array.
+     *
+     * @param $name
+     *
+     * @return bool
+     */
+    public function hasConsent($name)
+    {
+        return in_array($name, $this->getConsent(), true);
+    }
+
+    /**
      * If the cookie named "cookie_consent_status" exists then its value will be
      * parsed into an array of strings each indicating which consent the user
      * had allowed. Default to an empty Array.
@@ -40,17 +52,5 @@ class CookieConsentHelper extends Component
             }
         }
         return [];
-    }
-
-    /**
-     * Returns true if the consent is present in the consent array.
-     *
-     * @param $name
-     *
-     * @return bool
-     */
-    public function hasConsent($name)
-    {
-        return in_array($name, $this->getConsent(), true);
     }
 }
